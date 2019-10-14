@@ -61,6 +61,7 @@ public class MyVisualizer {
         setData(-1, -1, false);
     }
 
+    // repaint the window
     public void setData(int x, int y){
         if(data.inArea(x, y)){
             data.maze[x][y] = MazeData.ROAD;
@@ -69,6 +70,7 @@ public class MyVisualizer {
         MyVisHelper.pause(MyVisualizer.DELAY);
     }
 
+    // repaint the window
     public void setData(int x, int y, boolean isPath){
         if(data.inArea(x, y)){
             data.path[x][y] = isPath;
@@ -144,10 +146,10 @@ public class MyVisualizer {
                 }
             }
         }
-    }
+    } 
     private class MyListener extends KeyAdapter {
 
-
+        // start to search a correct path once one the space is pressed
         @Override
         public void keyPressed(KeyEvent e) {
             if(e.getKeyChar() == ' '){
